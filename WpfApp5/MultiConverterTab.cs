@@ -18,7 +18,10 @@ namespace Sudoku
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
 
-            if (!string.IsNullOrEmpty((string)value) && int.TryParse((string)value, out int result))
+            string valueWithoutSpace = ((string)value).Trim();
+          
+
+            if (!string.IsNullOrEmpty(valueWithoutSpace) && int.TryParse(valueWithoutSpace, out int result))
             {
                
                  return new object[] { result, result, result };
