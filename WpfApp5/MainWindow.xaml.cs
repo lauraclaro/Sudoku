@@ -35,9 +35,8 @@ namespace Sudoku
            
             Puzzles_Repository_4x4 Puzzles_4x4 = new Puzzles_Repository_4x4();
 
-            
-
             Window Wind_4x4 = new Window();
+           
             Grid Grids_4x4 = new Grid();
             Wind_4x4.Content = Grids_4x4;
 
@@ -242,11 +241,8 @@ namespace Sudoku
 
             // Window Wind_9x9 = new Window();
 
-            Window Wind_9x9 = new Window
-            {
-                Width = 700,
-                Height = 550,
-            };
+            Window Wind_9x9 = new Window();
+           
             Grid Grids_9x9 = new Grid();
             Wind_9x9.Content = Grids_9x9;
 
@@ -430,9 +426,6 @@ namespace Sudoku
             }
         }
 
-
-
-        
         private void Btn_6x6_Easy_Click(object sender, RoutedEventArgs e)
         {
             Puzzles_Repository_6x6 Puzzles_6x6 = new Puzzles_Repository_6x6();
@@ -486,10 +479,6 @@ namespace Sudoku
             }
         }
 
-
-
-
-       
         private void Btn_9x9_Easy_Click(object sender, RoutedEventArgs e)
         {
             Puzzles_Repository_9x9 Puzzles_9x9 = new Puzzles_Repository_9x9();
@@ -583,7 +572,12 @@ namespace Sudoku
 
         private void Play(int nbRows_Per_Block, int nbCols_Per_Block, int[,] Puzzle)
         {
-            Window WindSudoku = new Window();
+            Window WindSudoku = new Window
+            {
+                Width = 700,
+                Height = 700
+            };
+
             Grid GridUser = new Grid();
 
             ModelSudoku VmSudoku = new ModelSudoku(nbRows_Per_Block, nbCols_Per_Block);
